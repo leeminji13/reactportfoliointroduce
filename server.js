@@ -1,22 +1,14 @@
 var express = require('express')
-var mysql = require('mysql')
-var dbconfig = require('./db/config.js')
-var connection = mysql.createConnection(dbconfig)
+var app = express(); 
 
 var postsend = require('./api/postsend')
 var getsend = require('./api/getsend')
+var sqlsend = require('./api/introduce')
 
-var app = express(); 
 
-app.get('/introduce', (req, res) =>{
-    connection.query(
-        'select * from introduce_react_node.prev_interview', 
-        (error, result) => {
-            if(error) throw error;
-            res.send(result)
-        })
-})
-app.use('/postsend', postsend); app.use('/getsend', getsend);
+app.use('/postsend', postsend); 
+app.use('/getsend', getsend);
+app.use('/introduce', sqlsend);
 
 app.set('port',8080)
 app.get('/', (req, res) =>{  res.send(' / 루트요청 있었음'); })

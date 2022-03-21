@@ -1,4 +1,5 @@
 module.exports = {
+    connectionLimit: 66,  
     host : 'myreactdb-1.cnplyybrklko.ap-northeast-2.rds.amazonaws.com',
     user : 'admin',
     password : 'Bang0820!!',

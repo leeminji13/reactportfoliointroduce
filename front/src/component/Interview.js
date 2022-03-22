@@ -1,71 +1,39 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react'; 
 import axios from 'axios';
-
-
-const Interview = (props) => {
-
-    const [interviewId, interviewIdUpdate ] = useState(0);  
-    const [initData, setInitData] = useState([
-        
-    ])
-    //initData의 데이터타입은 array, object를 값으로 하는 array == 데이터베이스와 연동한 mapping을 같음
-
-    const interviewPublic = async () => {     
-                                                                
-                                    await axios.get(
-                                        `/prointerview?botable=${props.botable}`
-                                        ).then(
-                                            (result) => {
-                                                
-                                               
-                                                //실행이 되었었지만 get으로 데이터올때까지는 실행하지않고 대기한다.
-                                               const _interviewObjs = result.data.map(
-                                                   //새로운 변수로 sql데이터들을 차례대로 object 변수로 옮겨줌
-                                                   // map( (arr기준변수) => ( )) map실행 프로토타입 
-                                                   // _interviewtext은 테이터타입 array(object에 해당함)
-                                                   (row) => ( 
-                                                     interviewIdUpdate(row.no),
-                                                        {
-                                                                no : row.no,
-                                                                subject: row.subject,
-                                                                content: row.content,
-
-                                                        }
-                                                   )
-                                               ) // map마침
-                                               console.log(_interviewObjs)
-                                               setInitData(_interviewObjs)
-                                               console.log(initData)
-
-                                            }
-                                        ).catch ( (e) => {
-                                            console.log(e +'이유로 통신이 불안전함')
-                                             }
-                                        )  
-                              
-    }
-    
-    
-    useEffect( () => {           
-        //클래스 컴포넌트 componentDidMount , componentDidUpdate, componentWillUnmont 모두를 수행하는 함수 
-       
-        interviewPublic(); 
-        
-     } , [initData]  )
-
-    
-
-     //출력
-        
-        return (           
-        
-            <div>
-               { interviewId !== '번호' ?  interviewId : '비동기통신 연결아직 안됨'} 
-             
-              <p>{typeof initData}</p>
-            </div>
-        );
+const Interview = (props) => {   
+    let [ interviewId, interviewIdUpdate ] = useState([]);  
+    const [typeData,insertDB] = useState(0);   
    
+    const interviewDataSetting = async () => {                      
+                             await axios.get(`/prointerview?botable=${props.botable}`)
+                                        .then(
+                                            (result) => {  
+                                                try{                                                                                                   
+                                                    console.log(interviewId); //처음 디비를 받을 변수가 비어있다는 것을 알게됨 
+                                                    console.log(typeData); // 트리거역활을 할 변수값이 안변함 useEffect 안실행됨을 확인
+                                                    interviewIdUpdate([...result.data]);                                                   
+                                                    console.log(interviewId);                                                
+                                                    insertDB(result.data[0].no);                                                 
+                                                }
+                                                catch(err){ console.log(err.message) }
+                                            }
+                                        )
+                                        .catch ( e => { console.log(e +'이유로 통신이 불안전함') }
+                                        ) 
+    } 
+    useEffect( () => {  interviewDataSetting(); } , [typeData]  )          
+        return (  
+            <div> <h2>{ interviewId.length > 0 ? "사전인터뷰" : "데이터전송중..." }</h2>
+             {
+                 interviewId.map(( contant, i ) => {
+                     return(
+                         <li>
+                             <h3>{i+1} {contant.subject}</h3><div>{contant.content}</div>
+                         </li>
+                     )
+                 })
+             }
+            </div>
+        );   
 }
-
 export default Interview;

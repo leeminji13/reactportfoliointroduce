@@ -7,7 +7,7 @@ function App() {
   return (
     <div> 
     <h2>드뎌 RESTful API </h2>  
-     <Conent_interview botable='conent_interview'></Conent_interview>
+     <Conent_interview botable='bby_preinterview.conent_interview'></Conent_interview>        
     </div>
   );
 }

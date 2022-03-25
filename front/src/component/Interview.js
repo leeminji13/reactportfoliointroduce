@@ -5,15 +5,13 @@ const Interview = (props) => {
     const [typeData,insertDB] = useState(0);   
    
     const interviewDataSetting = async () => {                      
-                             await axios.get(`/prointerview?botable=${props.botable}`)
+                             await axios.get(`/prointerview?type=${props.botable}`)
                                         .then(
                                             (result) => {  
-                                                try{                                                                                                   
-                                                    console.log(interviewId); //처음 디비를 받을 변수가 비어있다는 것을 알게됨 
-                                                    console.log(typeData); // 트리거역활을 할 변수값이 안변함 useEffect 안실행됨을 확인
-                                                    interviewIdUpdate([...result.data]);                                                   
-                                                    console.log(interviewId);                                                
-                                                    insertDB(result.data[0].no);                                                 
+                                                try{  
+                                                    console.log(result)
+                                                    interviewIdUpdate([...result.data]); 
+                                                    insertDB(result.data[ result.data.length - 1 ].no);                                                 
                                                 }
                                                 catch(err){ console.log(err.message) }
                                             }
@@ -21,7 +19,11 @@ const Interview = (props) => {
                                         .catch ( e => { console.log(e +'이유로 통신이 불안전함') }
                                         ) 
     } 
-    useEffect( () => {  interviewDataSetting(); } , [typeData]  )          
+    useEffect( () => {  interviewDataSetting(); } , [typeData]  ) 
+    //typeData이 값이 변할때 재랜더링해라.
+    
+    
+
         return (  
             <div> <h2>{ interviewId.length > 0 ? "사전인터뷰" : "데이터전송중..." }</h2>
              {

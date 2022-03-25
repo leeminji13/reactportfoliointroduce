@@ -6,8 +6,8 @@
   "scripts": {
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "react" : "cd front && npm start",
-    "start" : "concurrently --kill-others-on-fail \"npm run server\" \"npm run react\""
+    "react": "cd front && npm start",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run react\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "dependencies": {
     "concurrently": "^7.0.0",
     "express": "^4.17.3",
+    "mybatis-mapper": "^0.6.7",
     "mysql": "^2.18.1"
   }
 }

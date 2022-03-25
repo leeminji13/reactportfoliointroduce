@@ -1,45 +1,28 @@
 var express = require('express')
-var mysql = require('mysql')
-var dbconfig = require('../db/config.js')
-
-var pool = mysql.createPool(dbconfig); 
-
 var router = express.Router();
+
+var normalpage = require('../routes/normal')
+var awssql = require('./awssql')
+
 router.use(express.urlencoded({ extended : true }))
+//리액트에서 비동기로 요청시
+router.get('/', (req, res, next) =>{   
+   var sqlsideis = req.query.type;  
+   if( sqlsideis == 'aws'){
+       // localhost:3000/prointerview?type=aws
+        req.body.mapper = "introduceSql" //mapper namespace로 설정
+        req.body.crud = "select" // select, insert, update, delete 중 선택
+        req.body.mapper_id = "interview" // sql문 정보를 담고있는 객체의 id
 
-router.get('/', (req, res, next) =>{
-   
-
-   var botable = req.query.botable;
-   var crud = 'select'
-
-   switch(botable){ //워크벤치의 스키마.테이블
-    case "bby_preinterview.conent_interview" : 
-         crud = 'select';         
-         break;
-    default:
-         botable = 'none' ;
-         crud = '';
-         break;
-    }
-  
-    if(botable !== 'none'){
-        pool.getConnection(function(err, connection) {
-            connection.query(
-                crud +' * from '+ botable, 
-                (error, result) => {
-                    if(error) throw error;
-                    res.send(result)
-                })       
-            connection.release(); //연결한것을 이제 풀어라
-        })
-   }
-   else{ //botable이 없는 경우 
-      var accident = require('../routes/normal')
-      router.use('/', accident ) //라우팅생성
-      // next에 res를 출력하게 페이지분배
-      next('route')
-   }
+        router.use('/', awssql )
+        next('route')
+       
+   }else{ //평범한 라우팅이 이쪽으로 오시오.
+        //localhost:3000/prointerview/write
+        //localhost:3000/prointerview
+        router.use('/', normalpage )
+        next('route')
+   }   
 })
 
 module.exports = router;

@@ -7,17 +7,18 @@ var router = express.Router();
 var pool = mysql.createPool(dbconfig); 
 
 router.use(express.json())
-// req.body -> json
+
 //node의 main을 기준으로 경로 계산해야됨!!! 
 mybatisMapper.createMapper(['./mapper/introduceSql.xml'])
 var format = { language : 'sql', indent : '  '}
 
 
-router.get('/', (req, res ) =>{ 
+router.post('/', (req, res ) =>{ 
     var params = req.body; //json
     var query = mybatisMapper.getStatement(
     params.mapper, params.mapper_id, params, format );
-    //sql문 추출해서 query에 담기
+    //sql문 추출해서 query에 담기 
+
 
     pool.getConnection(function(err, connection) {
 

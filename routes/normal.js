@@ -3,10 +3,10 @@ var express = require('express')
 var router = express.Router();
 
 router.get('/', (req, res ) => {
-    res.send("localhost:3000/prointerview로 리액트에서 요청해서 이 문자를 보냄")
+    res.send("localhost:3000/prointerview로 get으로 전송")
 })
-router.post('/write', (req, res ) => {    
-    res.send("localhost:3000/prointerview/write 로 리액트에서 요청해서 글쓰기 폼태그 보여줄거임")
+router.post('/', (req, res ) => {    
+    res.send("localhost:3000/prointerview post로 요청전송")
 })
 
 module.exports = router

@@ -12,21 +12,27 @@ router.post('/', (req, res, next) =>{
   
    if( type ){  
       switch(type){
-
-         case 'list' : req.body.crud = "select"; 
+         //사전인터뷰 글보기, 글쓰기, 글수정
+         case 'interviewlist' : req.body.crud = "select"; 
                        req.body.mapper_id = "interview";
                        break;
-         case 'write': req.body.crud = "insert"; 
+         case 'interviewwrite': req.body.crud = "insert"; 
                        req.body.mapper_id = "interviewInsert";
                        break;
-         case 'modify': req.body.crud = "update"; 
+         case 'interviewmodify': req.body.crud = "update"; 
                        req.body.mapper_id = "interviewModify";
                        break; 
+         //면접제안 글보기, 글쓰기
+         case 'meetinglist': req.body.crud = "select"; 
+                       req.body.mapper_id = "meetingArrange";
+                       break;
+         case 'meetingwrite': req.body.crud = "insert"; 
+                       req.body.mapper_id = "meetingArrangeInsert";
+                       break;         
          default      : req.body.crud = "delete"; 
                         req.body.mapper_id = "interviewDrop";
                         break; 
-      }      
-
+      }  
           router.use('/', awssql )
           next('route')
    }

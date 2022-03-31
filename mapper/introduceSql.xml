@@ -6,16 +6,46 @@
             *
         from bby_preinterview.conent_interview
     </select>
-    <select id="portfolio">
+    <insert id="interviewInsert">
+        insert into 
+            bby_preinterview.conent_interview (
+                subject                
+                , content 
+            )
+            values (
+                #{wr_subject}
+                , #{wr_content}
+            )
+    </insert>
+    <select id="meetingArrange">
         select 
-            no
-            ,  category
-            ,  subject
-            ,  content
-            ,  imgSrc
-            ,  imgWidth
-            ,  imgHeight            
-        from bby_preinterview.portfolio
-    </select>    
+            *            
+        from bby_portfolio.portfolio
+    </select>
+    <insert id="meetingArrangeInsert">
+        insert into 
+            bby_portfolio.portfolio (
+                subject                
+                , content
+                , category
+                , thumb
+                , ori
+                , data
+                <if test="updataday != null && updateday ==''">
+                , updateday
+                </if>
+            )
+            values (
+                 subject                
+                , content
+                , category
+                , thumb
+                , ori
+                , data
+                <if test="updataday != null && updateday ==''">
+                , #{updateday}
+                </if>
+            )
+    </insert>    
 </mapper>
 

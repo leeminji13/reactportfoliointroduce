@@ -30,10 +30,7 @@
                 , category
                 , thumb
                 , ori
-                , data
-                <if test="updataday != null && updateday ==''">
-                , updateday
-                </if>
+                , data                
             )
             values (
                  subject                
@@ -41,10 +38,7 @@
                 , category
                 , thumb
                 , ori
-                , data
-                <if test="updataday != null && updateday ==''">
-                , #{updateday}
-                </if>
+                , DATE_FORMAT(NOW(),'%Y-%m-%d')               
             )
     </insert>    
 </mapper>

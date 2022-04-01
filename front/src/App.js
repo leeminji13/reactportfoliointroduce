@@ -1,4 +1,5 @@
 import Conent_interview from './component/Interview';
+import './App.css';
 
 function App() {
   return (

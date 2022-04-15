@@ -4,11 +4,11 @@
     <select id="interview">
         select 
             *
-        from bby_preinterview.conent_interview
+        from dlalswl9413.lmj_write_free
     </select>
     <insert id="interviewInsert">
         insert into 
-            bby_preinterview.conent_interview (
+           introduce_react_interview.portfolio (
                 subject                
                 , content 
             )
@@ -20,11 +20,11 @@
     <select id="meetingArrange">
         select 
             *            
-        from bby_portfolio.portfolio
+        from introduce_react_interview.portfolio
     </select>
     <insert id="meetingArrangeInsert">
         insert into 
-            bby_portfolio.portfolio (
+            introduce_react_interview.portfolio (
                 subject                
                 , content
                 , category

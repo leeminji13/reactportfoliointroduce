@@ -8,9 +8,10 @@ router.use(express.urlencoded({ extended : true }))
 
 router.post('/', (req, res, next) =>{   
    var type = req.query.type;
+   var routenm = normalpage
    req.body.mapper = "introduceSql";     
   
-   if( type ){  
+   
       switch(type){
          //사전인터뷰 글보기, 글쓰기, 글수정
          case 'interviewlist' : req.body.crud = "select"; 
@@ -29,17 +30,13 @@ router.post('/', (req, res, next) =>{
          case 'meetingwrite': req.body.crud = "insert"; 
                        req.body.mapper_id = "meetingArrangeInsert";
                        break;         
-         default      : req.body.crud = "delete"; 
-                        req.body.mapper_id = "interviewDrop";
+         default      : routenm = normalpage
                         break; 
       }  
-          router.use('/', awssql )
+
+          router.use('/', routenm )
           next('route')
-   }
-   else{           
-          router.use('/', normalpage )
-          next('route')
-   }   
+ 
 })
 
 module.exports = router;

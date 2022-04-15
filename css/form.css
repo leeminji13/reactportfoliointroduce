@@ -1,0 +1,104 @@
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+p,span,h1,h3,label{
+    font-family: 'IBMPlexSansKR-Regular';
+}
+label{
+    margin-right: 30px;
+}
+
+li{list-style: none}
+
+.d-flex{display: flex;}
+.d-none{display: none;}
+
+#contactform{
+    display: block;
+    max-width: 650px;
+    margin: 0 auto;
+    text-indent: 10px;
+    /* font-weight: bold; */
+}
+#contactform ul ul{
+    padding: 0;
+}
+#contactform li{
+    line-height: 3;
+    font-size: 18px;
+    border: 1px black solid;
+    margin: 5px 0;
+}
+#contactform li li{
+    border: 0;
+}
+#contactform .labeltext{ font-weight: bold;}
+#contactform .labeltext input[type='text']{border: 0;}
+#contactform .labeltext input[name='phone']{ text-align: center;}
+#contactform .labeltext input:focus{ outline: none;}
+#contactform h3{margin: 0; font-size: 18px;}
+.title{
+    display: flex;
+    align-items: center;
+}
+.title span{
+    font-size: 13px;
+}
+.ability li input{
+    margin-right: 5px;
+}
+.agreebox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agreebox span{
+    font-size: 15px;
+}
+.agreebox label{
+    display: contents;
+}
+#agree{
+    display: none;
+}
+#agree + label:before{
+    content: "\f0c8";
+    font-family: "Font Awesome 6 Free";
+    display: inline-block;
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M211.8 339.8C200.9 350.7 183.1 350.7 172.2 339.8L108.2 275.8C97.27 264.9 97.27 247.1 108.2 236.2C119.1 225.3 136.9 225.3 147.8 236.2L192 280.4L300.2 172.2C311.1 161.3 328.9 161.3 339.8 172.2C350.7 183.1 350.7 200.9 339.8 211.8L211.8 339.8zM0 96C0 60.65 28.65 32 64 32H384C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96zM48 96V416C48 424.8 55.16 432 64 432H384C392.8 432 400 424.8 400 416V96C400 87.16 392.8 80 384 80H64C55.16 80 48 87.16 48 96z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; */
+}
+
+#agree:checked + label:before{
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    display: inline-block;
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; */
+}   
+#submit{
+  display: none;
+}
+.submitbox label > img{
+    width: 100px;
+    height: 100px;
+    float: right;
+    cursor: pointer;
+}
+.submitbox label > img:hover{
+    transform: translate(10%,-20%);
+    transition: 0.5s;
+}
+#contactform ul{
+    margin-bottom: 0;
+}
+#number{
+    width: 70px;
+    height: 30px;
+    margin-right: 30px;
+}

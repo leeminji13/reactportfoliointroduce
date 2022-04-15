@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="https://kit.fontawesome.com/3f7f5e76f1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="https://www.naver.com" onsubmit="return forminspector(this)" method="post" name="contactform" id="contactform">
+    <ul>
+        <li class="labeltext">
+            <label for="company">회사명</label>
+            <input type="text" name="company" required>
+        </li>
+        <li class="labeltext">
+            <label for="interviewDT">면접 날짜와 시간</label>
+            <input type="text" name="interviewDT" required>
+        </li>
+        <li class="positionbox">
+            <div class="title"><h3>포지션</h3><span>*하나만 선택해주세요</span></div>
+            <ul class="position d-flex">
+                <li><input type="radio" checked name="jobposition" value="t" id="rc1" required><label for="rc1">마케팅과 기획</label></li>
+                <li><input type="radio" name="jobposition" value="m" id="rc2" required><label for="rc2">퍼블리셔</label></li>
+                <li><input type="radio" name="jobposition" value="p" id="rc3" required><label for="rc3">디자인</label></li>
+                <li><input type="radio" name="jobposition" value="c" id="rc4" required><label for="rc4">영업</label></li>
+            </ul>
+        </li>
+        <li class="labeltext">
+            <label for="phone">담당자연락처</label>
+            <select name="number" id="number">
+                <option>010</option>
+                <option>011</option>
+                <option>017</option>
+            </select>
+            <input type="text" name="phone" placeholder="0000">
+            <input type="text" name="phone" placeholder="0000">
+        </li>
+        <li class="abillitybox">
+            <div class="title"><h3>희망업무 능력 순위</h3><span>*포지션이 퍼블리셔일 경우에만 해당됩니다.</span></div>
+            <ul class="ability">
+                <li><input type="text" maxlength="1" size="1" name="abillity[0]" id="ab1" required><label for="ab1">html/css</label></li>
+                <li><input type="text" maxlength="1" size="1" name="abillity[1]" id="ab2" required><label for="ab2">jquery</label></li>
+                <li><input type="text" maxlength="1" size="1" name="abillity[2]" id="ab3" required><label for="ab3">node&mysql</label></li>
+                <li><input type="text" maxlength="1" size="1" name="abillity[3]" id="ab4" required><label for="ab4">react</label></li>
+            </ul>
+            
+        </li>
+        <li class="agreebox">
+            <input type="checkbox" id="agree" required>
+            <label for="agree"><span>개인정보정책동의</span></label>
+        </li>
+    </ul>
+    <div class="submitbox">
+        <input type="submit" name="submit"  id="submit" value="제안하기">
+        <label for="submit"><img src="./img/submit3.svg" alt=""></label>
+    </div>
+    
+</form>
+    <!-- input과 label태그가 떨어져 있어도 name이 같으면 label을 클릭했을때 선택된다  -->
+
+    <script>
+    // {forminspector}
+    // window.onload = forminspector;
+    
+    // { e => {forminspector();}}
+     window.onload = function(){
+        var agree = document.forms["contactform"];
+        agree.onsubmit = function(){
+            forminspector(this);
+        }
+    }
+        function forminspector(formarray){
+            var hpelement = formaarray['phone']
+            //name hd객체
+            var hpvalue = hpelement.value;//string
+            var hpArr = hpvalue.split('-');//정렬화해둠 3자리를 구분하여 나중에 배출할때 씀
+            // hpArr=["010","ddd","1041"]
+            // Number.isNaN(i) -> false ->숫자일때만
+            // Number.isNaN(i)-> true -> 숫자가 아닌 모든 경우 (undefined도 포함)
+            var hp = hpArr.map((i) => { // 숫자와 문자있으면 첫번재 등장하는 문자이후를 없애버려서 숫자
+                i= parseInt(i);
+                if (Number.isNaN(i)){
+                    alert('연락처 정보를 형식에 맞게 기입해주세요');
+                    hpelement.focus();
+                    return false; //멈춰
+                }else{
+                    return +i;
+                }
+            })
+            console.log(hp); //비어있는 상태도 NaN숫자아님을 의미
+
+            if(Number.isNaN(hp) || hpArr.length < 3){ //핸드폰 비어있거나 문자거나 숫자가 아닌경우 
+                hpelement.focus();//이벤트객체를 
+                return false;
+            }
+
+
+            if(hp == ""){ //isNaN -> true,false 숫자전환하는 함수
+                alert('예시와 같이 010-0000-0000 기입해주세요')
+                hpelement.focus();
+                return false;
+            }
+
+            //동의여부
+           var agrreechk = formarray['agree'];//form을 this라고 할때 그 form안에 name이 agree인 객체
+            if(!agreechk.checked){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

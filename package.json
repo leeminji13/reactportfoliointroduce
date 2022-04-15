@@ -7,22 +7,20 @@
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "cd front && npm start",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run react\""
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run react\" "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/4thdraw/nodemysqlreact.git"
+    "url": "git+https://github.com/leeminji13/reactportfoliointroduce.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/4thdraw/nodemysqlreact/issues"
-  },
-  "homepage": "https://github.com/4thdraw/nodemysqlreact#readme",
   "dependencies": {
     "concurrently": "^7.0.0",
     "express": "^4.17.3",
     "mybatis-mapper": "^0.6.7",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "sass": "^1.50.0"
   }
 }

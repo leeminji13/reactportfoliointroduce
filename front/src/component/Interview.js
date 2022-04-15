@@ -33,9 +33,6 @@ const Interview = (props) => {
        
      } , [typeData]  ) 
    
-    
-
-    
 
         return (  
             

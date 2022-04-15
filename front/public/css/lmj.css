@@ -2,6 +2,37 @@
   width: 770px;
 }
 
+#hd {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 102px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 10000;
+  background-color: white;
+}
+
+#hd:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  bottom: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#hd.up {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.wrap {
+  height: 5000px;
+}
+
 #hd .logo .smallicon {
   width: 65px;
 }
@@ -58,6 +89,10 @@ body {
   padding-bottom: 10px;
 }
 
+#mainport {
+  padding-top: 102px;
+}
+
 #mainport,
 #cardport {
   padding-bottom: 18vw;
@@ -95,7 +130,7 @@ body {
 }
 
 #mainport .report a {
-  font-size: 0.8vw;
+  font-size: 0.8rem;
   text-align: center;
 }
 
@@ -109,11 +144,11 @@ body {
 }
 
 #mainport .maintext p {
-  font-size: 1.1vw;
+  font-size: 2rem;
 }
 
 #mainport .maintext span {
-  font-size: 4vw;
+  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -122,11 +157,11 @@ body {
 }
 
 #mainport .maintext p.blackline {
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
 #mainport .maintext p span.num {
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
 #mainport .maintext p span.num:after {
@@ -161,7 +196,7 @@ span.num2:after {
   text-align: center;
   border: 1px solid black;
   padding: 0.375rem 0.75rem;
-  font-size: 1.2vw;
+  font-size: 1.2rem;
   border-radius: unset;
   display: inline-block;
   text-align: start;
@@ -178,24 +213,24 @@ span.num2:after {
 }
 
 #cardport .card .card-body .card-title p {
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 
 #cardport .card .card-body .card-subtitle {
-  font-size: 2.1vw;
+  font-size: 2.1rem;
 }
 
 #cardport .card .card-body .card-text p {
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 #cardport .card .card-body .card-text span {
-  font-size: 2.2vw;
+  font-size: 2.2rem;
 }
 
 .card {
   border: unset;
-  padding-bottom: 10vw;
+  padding-bottom: 5vw;
 }
 
 #aboutme .card .card-body .card-title img {
@@ -203,47 +238,65 @@ span.num2:after {
 }
 
 #aboutme .card .card-body .card-title span {
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
-#aboutme .card .abouttext .info {
+#aboutme .abouttext .info {
   top: 10%;
   left: 7%;
   text-align: center;
 }
 
-#aboutme .card .abouttext .info h1 {
-  font-size: 5vw;
+#aboutme .abouttext .info h1 {
+  font-size: 4rem;
   padding-bottom: 5%;
 }
 
-#aboutme .card .abouttext .info p {
-  font-size: 3vw;
+#aboutme .abouttext .info p {
+  font-size: 2rem;
   padding-bottom: 3%;
 }
 
-#aboutme .card .abouttext .licences {
+#aboutme .abouttext .licences {
   top: 25%;
   right: 5%;
   text-align: center;
 }
 
-#aboutme .card .abouttext h1 {
-  font-size: 5vw;
+#aboutme .abouttext h1 {
+  font-size: 4rem;
   padding-bottom: 5%;
 }
 
-#aboutme .card .abouttext p {
-  font-size: 3vw;
+#aboutme .abouttext p {
+  font-size: 2rem;
   padding-bottom: 3%;
 }
 
 #aboutme .card .card-body .card-subtitle p {
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 #aboutme .card .card-body .card-text p {
-  font-size: 2vw;
+  font-size: 2rem;
+}
+
+#aboutme .abouttext .link2 {
+  position: absolute;
+  width: 6%;
+  height: 13%;
+  top: 100%;
+  right: 100%;
+  background-color: #cdf37f;
+}
+
+#aboutme .abouttext .link2 img {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .progress {
@@ -265,14 +318,14 @@ span.num2:after {
       -ms-flex-align: center;
           align-items: center;
   color: #000;
-  font-size: 1.8vw;
+  font-size: 1.8rem;
 }
 
 .progress-bar p {
-  font-size: 1.8vw;
+  font-size: 1.8rem;
 }
 
-#hd .line-box span {
+#mainport .line-box span {
   position: fixed;
   background: rgba(0, 0, 0, 0.1);
   z-index: 101;

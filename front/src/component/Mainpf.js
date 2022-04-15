@@ -12,6 +12,10 @@ export default function Mainpf(){
   return (
       <div id="mainport" className='pl-mj pr-mj np'>
         <div className="position-relative">
+        <div class="line-box pc-ver1">
+          <span class="border-l"></span>
+          <span class="border-r"></span>
+        </div>
           <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -27,7 +31,7 @@ export default function Mainpf(){
           className="mySwiper"
             >
                
-                <SwiperSlide className="position-relative">
+                <SwiperSlide className="position-relative port1">
                     <img className="pc-ver1" src='/img/ann1780.jpg'/>
                     <img className="mb-ver1" src='/img/ann767.jpg'/>
 
@@ -44,7 +48,7 @@ export default function Mainpf(){
                     </div>
                     
                 </SwiperSlide>
-                <SwiperSlide className="position-relative">
+                <SwiperSlide className="position-relative port2">
                       <img className="pc-ver1" src='/img/bowbanner1780.jpg'/>
                       <img className="mb-ver1" src='/img/bow767.jpg'/>
 
@@ -61,7 +65,7 @@ export default function Mainpf(){
                       </div>
                 </SwiperSlide>
                 
-                <SwiperSlide className="position-relative">
+                <SwiperSlide className="position-relative port3">
                       <img className="pc-ver1" src='/img/bas1780.jpg'/>
                       <img className="mb-ver1" src='/img/bas767.jpg'/>
 

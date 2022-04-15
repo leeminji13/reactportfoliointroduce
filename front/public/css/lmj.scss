@@ -11,6 +11,30 @@
     width: 770px;
 }
 #hd{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 102px;
+    transition: 0.5s;
+    z-index: 10000;
+    background-color: white;
+}
+#hd:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+#hd.up{ transform: translateY(-100%);}
+        .wrap{
+            height: 5000px;
+        }
+
+#hd{
     .logo{
         .smallicon{
             width: 65px;
@@ -91,10 +115,34 @@ body{
         }
     }
 }
+#mainport{
+    padding-top: 102px;
+}
 #mainport,
 #cardport{
     padding-bottom: 18vw;
 }
+///////////////////////////////////스와이퍼 백그라운드
+// #mainport{
+//     .swiper{
+//         .swiper-slide{
+//             background: no-repeat;
+//             background-position: center;
+//             height: 0;
+//             padding-bottom: 50%;
+//         }
+//         .port1{
+//             background-color: #c2c5b0;
+//         }
+//         .port2{
+//             background-color: #8bffc2;
+//         }
+//         .port3{
+//             background-color: #9fc8ea;
+//         }
+//     }
+// }
+
 #mainport{
     .swiper-slide{
         img{
@@ -124,7 +172,7 @@ body{
         left: 100%;
         border:1px solid #cdf37f;
         a{
-            font-size: 0.8vw;
+            font-size: 0.8rem;
             text-align: center;
         }
     }
@@ -142,14 +190,14 @@ body{
 #mainport{
     .maintext{
         p{
-            font-size: 1.1vw;
+            font-size: 2rem;
         }
     }
 }
 #mainport{
     .maintext{
         span{
-            font-size: 4vw;
+            font-size: 4rem;
             font-weight:700
         }
     }
@@ -165,7 +213,7 @@ body{
 #mainport{
     .maintext{
         p.blackline{
-           font-size: 1vw;
+           font-size: 1rem;
         }
     }
 }
@@ -173,7 +221,7 @@ body{
     .maintext{
         p{
             span.num{
-                font-size: 1vw;
+                font-size: 1rem;
             }
         }
     }
@@ -222,7 +270,7 @@ span.num2:after{
                     text-align: center;
                     border: 1px solid black;
                     padding: 0.375rem 0.75rem;
-                    font-size: 1.2vw;
+                    font-size: 1.2rem;
                     border-radius: unset;
                     display: inline-block;
                     text-align: start;
@@ -245,7 +293,7 @@ span.num2:after{
         .card-body{
             .card-title{
                 p{
-                    font-size: 2.5vw;
+                    font-size: 2.5rem;
                 }
             }
         }
@@ -255,7 +303,7 @@ span.num2:after{
     .card{
         .card-body{
             .card-subtitle{
-                font-size: 2.1vw;
+                font-size: 2.1rem;
             }
         }
     }
@@ -265,7 +313,7 @@ span.num2:after{
         .card-body{
             .card-text{
                 p{
-                    font-size: 2vw;
+                    font-size: 2rem;
                 }
             }
         }
@@ -276,7 +324,7 @@ span.num2:after{
         .card-body{
             .card-text{
                 span{
-                    font-size: 2.2vw;
+                    font-size: 2.2rem;
                 }
             }
         }
@@ -284,7 +332,7 @@ span.num2:after{
 }
 .card{
     border: unset;
-    padding-bottom: 10vw;
+    padding-bottom: 5vw;
 }
 #aboutme{
     .card{
@@ -302,33 +350,30 @@ span.num2:after{
         .card-body{
             .card-title{
                 span{
-                    font-size: 3vw;
+                    font-size: 3rem;
                 }
             }
         }
     }
 }
 #aboutme{
-    .card{
-        .abouttext{
-            .info{
-                top: 10%;
-                left: 7%;
-                text-align: center;
-                h1{
-                    font-size: 5vw;
-                    padding-bottom: 5%;
-                }
-                p{
-                    font-size: 3vw;
-                    padding-bottom: 3%;
-                }
+    .abouttext{
+        .info{
+            top: 10%;
+            left: 7%;
+             text-align: center;
+            h1{
+                font-size: 4rem;
+                padding-bottom: 5%;
             }
-        }
+            p{
+                font-size: 2rem;
+                padding-bottom: 3%;
+            }
+        } 
     }
 }
 #aboutme{
-    .card{
         .abouttext{
             .licences{
                 top: 25%;
@@ -336,14 +381,13 @@ span.num2:after{
                 text-align: center;
             }
             h1{
-                font-size: 5vw;
+                font-size: 4rem;
                 padding-bottom: 5%;
             }
             p{
-                font-size: 3vw;
+                font-size: 2rem;
                 padding-bottom: 3%;
             }
-        }
     }
 }
 #aboutme{
@@ -351,7 +395,7 @@ span.num2:after{
         .card-body{
             .card-subtitle{
                 p{
-                    font-size: 2vw;
+                    font-size: 2rem;
                 }
             }
         }
@@ -362,12 +406,31 @@ span.num2:after{
         .card-body{
             .card-text{
                 p{
-                    font-size: 2vw;
+                    font-size: 2rem;
                 }
             }
         }
     }
 } 
+#aboutme{
+    .abouttext{
+        .link2{
+            position: absolute;
+            width: 6%;
+            height: 13%;
+            top: 100%;
+            right: 100%;
+            background-color:#cdf37f;
+            img{
+                width: 70%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
 .progress{
     height: 2.5rem;
     background-color: unset;
@@ -379,12 +442,12 @@ span.num2:after{
     justify-content: space-between;
     align-items: center;
     color: #000;
-    font-size: 1.8vw;
+    font-size: 1.8rem;
     p{
-        font-size: 1.8vw;
+        font-size: 1.8rem;
     }
 }
-#hd{
+#mainport{
     .line-box{
         span{
             position: fixed;

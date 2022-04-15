@@ -25,7 +25,7 @@
     top: 0;
 }
 .border-r{
-	right: 5%;
+	right:5%;
 	width: 1px;
     height: 100%;
     top: 0;
@@ -33,17 +33,25 @@
 
 
 @media(min-width: 768px) {
+	/* 최소768px까지 나오지마(767부터 나와라) */
 	.mb-ver1{
 		display:none !important;
 	}
 }
+
+@media all and (max-width: 767px) {
+	html { font-size: 8px; } 
+  }
+
 @media(max-width: 767px) {
-	.pc-ver1{
+	.pc-ver1,
+	#hd:after{
 		display:none !important;
 	}
 	.np{
 		padding: unset;
 	}
-
 }
+
+
 

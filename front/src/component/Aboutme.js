@@ -37,13 +37,33 @@ export default class Aboutme extends Component{
                     </CardBody>
                     <div className='abouttext col-md-6 order-md-1 position-relative'>
                         <CardImg  width="100%" src="/img/aboutme.jpg" alt="Card image cap"/>
-                        <div className="info position-absolute">
+                        <div className="info position-absolute mb-ver1">
                             <h1>나의소개</h1>
                             <p>1994.11.08</p>
                             <p>010.3740.2207</p>
                             <p>minjis2s2s2@gmail.com</p>
                         </div>
-                        <div className="licences position-absolute">
+                        <div className="licences position-absolute mb-ver1">
+                            <h1>자격증</h1>
+                            <p>GTQ그래픽기술자격 1급</p>
+                            <p>웹디자인 기능사</p>
+                            <p>구글애널리틱스</p>
+                            <p>2종 운전면허증</p>
+                        </div>
+                        <div className="link2 pc-ver1 d-flex align-items-center justify-content-center">
+                            <a href="https://www.naver.com/"><img src="/img/go-btn.svg"></img></a>
+                        </div>
+                    </div>
+                </Card>
+                <div className="row justify-content-center align-items-center">
+                    <div className='abouttext col-md-6'>
+                        <div className="info pc-ver1">
+                            <h1>나의소개</h1>
+                            <p>1994.11.08</p>
+                            <p>010.3740.2207</p>
+                            <p>minjis2s2s2@gmail.com</p>
+                        </div>
+                        <div className="licences pc-ver1">
                             <h1>자격증</h1>
                             <p>GTQ그래픽기술자격 1급</p>
                             <p>웹디자인 기능사</p>
@@ -51,34 +71,38 @@ export default class Aboutme extends Component{
                             <p>2종 운전면허증</p>
                         </div>
                     </div>
-                </Card>
-                <div className=''>
-                    <div className='pb-3'>
-                        <Progress value="80" className="text-end">html/css
-                            <p className="text-start">80%</p>
-                        </Progress>
-                    </div>
-                    <div className='pb-3'>
-                        <Progress value="70" className="text-en">photoshop
-                            <p className="text-start">70%</p>
-                        </Progress>
-                    </div>
-                    <div className='pb-3'>
-                        <Progress value="80" className="text-en">figma
-                            <p className="text-start">80%</p>
-                        </Progress>
-                    </div>
-                    <div className='pb-3'>
-                        <Progress value="70" className="text-en">jquery
-                            <p className="text-start">70%</p>
-                        </Progress>
-                    </div>
-                    <div className='pb-3'>
-                        <Progress value="70" className="text-en">javascript
-                            <p className="text-start">70%</p>
-                        </Progress>
+                    <div className='col-md-6 align-items-center'>
+                        <div className='col-12 '>
+                            <div className='pb-3'>
+                                <Progress value="80" className="text-end">html/css
+                                    <p className="text-start">80%</p>
+                                </Progress>
+                            </div>
+                            <div className='pb-3'>
+                                <Progress value="70" className="text-en">photoshop
+                                    <p className="text-start">70%</p>
+                                </Progress>
+                            </div>
+                            <div className='pb-3'>
+                                <Progress value="80" className="text-en">figma
+                                    <p className="text-start">80%</p>
+                                </Progress>
+                            </div>
+                            <div className='pb-3'>
+                                <Progress value="70" className="text-en">jquery
+                                    <p className="text-start">70%</p>
+                                </Progress>
+                            </div>
+                            <div className='pb-3'>
+                                <Progress value="70" className="text-en">javascript
+                                    <p className="text-start">70%</p>
+                                </Progress>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
+               
             </div>
         );
     }

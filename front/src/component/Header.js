@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import styled, {keyframes} from 'styled-components';
+import jQuery from 'jquery';
+import $ from 'jquery';
 
 import {
     Collapse,
@@ -26,14 +28,46 @@ export default class Header1 extends Component {
         });
       }
 
-  render() {
-    return (
+      componentDidMount(){
+        $(document).ready( function(){
 
-      <div id="hd" className='border-b'>
-        <div class="line-box pc-ver1">
-          <span class="border-l"></span>
-          <span class="border-r"></span>
-        </div>
+          var didScroll; 
+          var lastScrollTop = 0; 
+          var delta = 5; 
+          var navbarHeight = $('#hd').outerHeight(); 
+    
+          $(window).scroll(function(event){ 
+                  didScroll = true; 
+          }); 
+          setInterval(function() { 
+              if (didScroll) { 
+                  hasScrolled(); 
+                  didScroll = false; 
+              } }, 250); 
+    
+          function hasScrolled() { 
+              var st = $(window).scrollTop(); 
+                  if(Math.abs(lastScrollTop - st) <= delta) return; 
+              
+                  if (st > lastScrollTop && st > navbarHeight){ 
+                      // Scroll Down 
+                      $('#hd').addClass('up'); 
+                  } 
+                  else {  
+                      // Scroll Up  
+                      $('#hd').removeClass('up');
+                  } 
+              lastScrollTop = st; 
+              }            
+      })
+      }
+
+  render() {
+    
+    return (
+      
+
+      <div id="hd" className='border-b position-fixed'>
          <Navbar light expand="md" className="pl-mj pr-mj">
              <h1>
                 <NavbarBrand className="logo" href="#none">

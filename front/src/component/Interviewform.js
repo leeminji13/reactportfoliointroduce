@@ -1,4 +1,6 @@
 import React from 'react';
+import '../App.css';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import axios from 'axios';
 import $ from 'jquery';
 
@@ -77,9 +79,96 @@ export default function interviewform(props) {
           //e.preventDefault(); 
 }
   return (
-        <div>
-        <h2>{ props.titlenm }</h2>
-            <form  action=''  method='post' name={props.botable}>
+        <div id="contact" className="pl-mj pr-mj">
+             <div>
+                <p className="blackline2 pb-5">
+                    <span className="num2 blackline">03</span>
+                    Leeminji : contact me
+                </p>
+            </div>
+            {/* <h2 className="d-flex justify-content-center">{ props.titlenm }</h2> */}
+            <Form action="https://www.naver.com" onsubmit="return forminspector(this)" method="post" name="contactform" id="contactform">
+                <FormGroup className="company d-flex align-items-center">
+                    <Label for="company">회사명</Label>
+                    <Input type="text" name="company" required/>
+                </FormGroup>
+
+                <FormGroup className="date d-flex align-items-center">
+                    <Label for="interviewDT">면접 날짜와 시간</Label>
+                    <Input type="text" name="interviewDT" required/>
+                </FormGroup>
+                
+                <FormGroup className="position">
+                    <div class="title d-flex align-items-center">
+                        <h3>포지션</h3>
+                        <span>*하나만 선택해주세요</span>
+                    </div>
+                    <ul className="d-flex align-items-center mb-3">
+                        <li className="d-flex align-items-center">
+                            <Input type="radio" name="jobposition" value="t" id="rc1" required></Input>{' '}
+                            <Label for="rc1" className="ms-2">마케팅과 기획</Label>
+                        </li>
+                        <li className="d-flex align-items-center">
+                            <Input type="radio" name="jobposition" value="m" id="rc2" required></Input>{' '}
+                            <Label for="rc2" className="ms-2">퍼블리셔</Label>
+                        </li>
+                        <li className="d-flex align-items-center">
+                            <Input type="radio" name="jobposition" value="p" id="rc3" required></Input>{' '}
+                            <Label for="rc3" className="ms-2">디자인</Label>
+                        </li>
+                        <li className="d-flex align-items-center">
+                            <Input type="radio" name="jobposition" value="c" id="rc4" required></Input>{' '}
+                            <Label for="rc4" className="ms-2">영업</Label>
+                        </li>
+                    </ul>
+                </FormGroup>
+               
+                <FormGroup className="publisher">
+                <div className="title d-flex align-items-center">
+                    <h3>희망업무 능력 순위</h3>
+                    <span>*포지션이 퍼블리셔일 경우에만 해당됩니다.</span>
+                </div>
+                    <ul className="d-flex">
+                        <li className="d-flex align-items-center">
+                            <Label for="ab1">html/css</Label>
+                            <Input className="border ms-2" type="text" maxlength="1" size="1" name="abillity[0]" id="ab1" required></Input>
+                        </li>
+                        <li className="d-flex align-items-center">
+                            <Label for="ab2">jquery</Label>
+                            <Input className="border ms-2" type="text" maxlength="1" size="1" name="abillity[1]" id="ab2" required></Input>
+                        </li>
+                        <li className="d-flex align-items-center">
+                            <Label for="ab3">node & mysql</Label>
+                            <Input className="border ms-2" type="text" maxlength="1" size="1" name="abillity[2]" id="ab3" required></Input>
+                        </li>
+                        <li className="d-flex align-items-center">
+                            <Label for="ab4">react</Label>
+                            <Input className="border ms-2" type="text" maxlength="1" size="1" name="abillity[3]" id="ab4" required></Input>
+                        </li>
+                    </ul>
+                </FormGroup>
+                <FormGroup className="pnum d-flex align-items-center">
+                    <Label for="phone">담당자연락처</Label>
+                    <div className="d-flex align-items-center ms-2">
+                        <Input type="select" id="number">
+                            <option>010</option>
+                            <option>011</option>
+                            <option>017</option>
+                        </Input>
+                        <Input type="text" name="phone" placeholder="0000" required></Input>
+                        <Input type="text" name="phone" placeholder="0000" required></Input>
+                    </div>
+                   
+                </FormGroup>
+                <FormGroup check className="agree pb-5">
+                    <Label check className="d-flex justify-content-center align-items-center">
+                        <Input type="checkbox" />
+                        개인정보정책동의
+                    </Label>
+                </FormGroup>
+                <Button><img src="/img/ftsubmit.svg"></img></Button>
+            </Form>
+            {/* <form  action=''  method='post' name={props.botable}>
                <div className='formStyle'>
                    <dl>
                        <dt><label htmlFor='wr_subject'>인터뷰제목</label></dt>
@@ -100,9 +189,8 @@ export default function interviewform(props) {
                        <label htmlFor="agreeTerm"><span>개인정보정책동의</span></label>
                    </div>
                    <a href="#none" onClick={e => { submitClick(props.botable, e) }}  className='btn' > 인터뷰올리기 </a>
-                   {/* e(onclick)가 실행됬을때.... */}
                </div>
-            </form> 
+            </form>  */}
         </div>
   )
 }

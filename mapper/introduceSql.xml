@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="introduceSql">
-    <select id="interview">
+    <select id="contact">
         select 
             *
-        from dlalswl9413.lmj_write_free
+        from form.contact
     </select>
-    <insert id="interviewInsert">
+    <insert id="conatactInsert">
         insert into 
-           introduce_react_interview.portfolio (
-                subject                
-                , content 
+           form.contact(
+                no
+                , company
+                , date
+                , ability
+                , phone
             )
             values (
-                #{wr_subject}
-                , #{wr_content}
+                #{wr_company}
+                , #{wr_date}
+                , #{wr_ability}
+                , #{wr_phone}
             )
     </insert>
     <select id="meetingArrange">

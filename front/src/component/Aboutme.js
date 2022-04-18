@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import '../App.css';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
-    import { Progress } from 'reactstrap';
+import { Progress } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import Accordion from 'react-bootstrap/Accordion'
+
 
 
 export default class Aboutme extends Component{
@@ -15,7 +18,7 @@ export default class Aboutme extends Component{
                         Leeminji : about me
                     </p>
                 </div>
-                <Card className='row align-items-center d-block d-md-flex flex-row'>
+                <Card className='row align-items-center d-block d-md-flex flex-row position-relative'>
                     <CardBody className='text-center col-md-6 order-md-2'>
                         <CardTitle className='pb-4'>
                             <div className="logoimg d-flex flex-column justify-content-center align-items-center">
@@ -50,59 +53,87 @@ export default class Aboutme extends Component{
                             <p>구글애널리틱스</p>
                             <p>2종 운전면허증</p>
                         </div>
-                        <div className="link2 pc-ver1 d-flex align-items-center justify-content-center">
-                            <a href="https://www.naver.com/"><img src="/img/go-btn.svg"></img></a>
-                        </div>
+                    </div>
+                    <div className="link2 pc-ver1 d-flex align-items-center justify-content-center position-absolute">
+                        <a href="https://www.naver.com/"><img src="/img/go-btn.svg"></img></a>
                     </div>
                 </Card>
-                <div className="row justify-content-center align-items-center">
-                    <div className='abouttext col-md-6'>
-                        <div className="info pc-ver1">
-                            <h1>나의소개</h1>
+                <div className="row justify-content-evenly align-items-center pb-5">
+                    <div className='abouttext col-md-5'>
+                        <div className="info pc-ver1 pb-5">
+                            <h1 className="pb-3">나의소개</h1>
                             <p>1994.11.08</p>
                             <p>010.3740.2207</p>
                             <p>minjis2s2s2@gmail.com</p>
                         </div>
                         <div className="licences pc-ver1">
-                            <h1>자격증</h1>
+                            <h1 className="pb-3">자격증</h1>
                             <p>GTQ그래픽기술자격 1급</p>
                             <p>웹디자인 기능사</p>
                             <p>구글애널리틱스</p>
                             <p>2종 운전면허증</p>
                         </div>
                     </div>
-                    <div className='col-md-6 align-items-center'>
+                    <div className='col-md-5 align-items-center'>
                         <div className='col-12 '>
-                            <div className='pb-3'>
+                            <div className='pb-5'>
                                 <Progress value="80" className="text-end">html/css
                                     <p className="text-start">80%</p>
                                 </Progress>
                             </div>
-                            <div className='pb-3'>
+                            <div className='pb-5'>
                                 <Progress value="70" className="text-en">photoshop
                                     <p className="text-start">70%</p>
                                 </Progress>
                             </div>
-                            <div className='pb-3'>
+                            <div className='pb-5'>
                                 <Progress value="80" className="text-en">figma
                                     <p className="text-start">80%</p>
                                 </Progress>
                             </div>
-                            <div className='pb-3'>
+                            <div className='pb-5'>
                                 <Progress value="70" className="text-en">jquery
                                     <p className="text-start">70%</p>
                                 </Progress>
                             </div>
-                            <div className='pb-3'>
+                            <div className='pb-5'>
                                 <Progress value="70" className="text-en">javascript
                                     <p className="text-start">70%</p>
                                 </Progress>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-               
+                <Accordion className='pl-mj pr-mj'>
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header><p className="text-center w-100">전공과 다른 프론트앤드개발을 하게 된 계기가 무엇인가요?</p></Accordion.Header>
+                        <Accordion.Body>
+                            <span className="text-center w-100">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                            est laborum.
+                            </span>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                        <Accordion.Header><p className="text-center w-100">만약 귀사에 입사하게 되면 앞으로의 포부는?</p></Accordion.Header>
+                        <Accordion.Body>
+                            <span className="text-center w-100">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                            est laborum.
+                            </span>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                </Accordion>            
             </div>
         );
     }

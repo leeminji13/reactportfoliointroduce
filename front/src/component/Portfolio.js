@@ -85,7 +85,7 @@ export default class Portfolio extends Component {
                     <CardText className='pb-4'>
                         <p className='pb-2'>-axios모듈로 노드와 비동기 통신</p>
                         <p className='pb-2'>-부트스트랩 그리드시스템을 이용하여 빠르고 유연한 반응형으로 제작</p>
-                        <span className='pb-2'>#강아지 #반려견 #반려견유치원 #반려견호텔</span>
+                        <span className='pb-2'>#자기소개서 #포트폴리오 #개발자포폴 #리액트포폴</span>
                     </CardText>
                     <div className='webbtn'>
                         <a href="https://www.gowoonsesang.com/" className="btn position-relative">제작보고서

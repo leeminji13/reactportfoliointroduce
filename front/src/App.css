@@ -16,6 +16,7 @@
 .pl-mj{ padding-left: 5%;}
 .pr-mj{ padding-right: 5%;}
 
+.border{border: 1px solid black;}
 .border-b{border-bottom: 1px solid rgba(0,0,0,0.1);}
 .border-t{border-top: 1px solid rgba(0,0,0,0.1);}
 .border-l{

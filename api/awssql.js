@@ -1,7 +1,7 @@
 var express = require('express')
 var mysql = require('mysql')
 var mybatisMapper = require('mybatis-mapper')
-var dbconfig = require('../db/cafe24.js')
+var dbconfig = require('../db/config.js')
 
 
 var router = express.Router();

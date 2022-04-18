@@ -22,10 +22,10 @@ export default function Mainpf(){
           pagination={{
             clickable: true,
           }}
-        //   autoplay={{
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        //   }}
+          // autoplay={{
+          //   delay: 4000,
+          //   disableOnInteraction: false,
+          // }}
           loop={true}
           modules={[Autoplay,Pagination]}
           className="mySwiper"

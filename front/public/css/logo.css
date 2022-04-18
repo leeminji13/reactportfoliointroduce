@@ -1,0 +1,49 @@
+.bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    animation-name: fadebg;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 10000000
+}
+.textBox{ position: absolute; left: 0; right: 0; 
+          top: 50%; 
+          translate(-50%); 
+          text-align: center;
+          overflow: hidden;
+          border-top: 1px solid white;
+          border-bottom: 1px solid white;
+          /*left:50% translate(-50%,-50%)*/
+        }
+.text{ font-size: 5vw; color: white;
+       line-height: 1;
+       text-transform: uppercase;
+       transform: translateY(100%); /*시각적으로만 쇼,나의 상단위치는 그대로*/
+       /*margin 과 padding*/
+       animation: slowtop 2s 3.5s;
+                        /*duration delay*/
+       animation-fill-mode: forwards;
+
+}
+@keyframes fadebg{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes slowtop{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

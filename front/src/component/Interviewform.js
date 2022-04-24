@@ -88,18 +88,19 @@ export default function interviewform(props) {
             </div>
             {/* <h2 className="d-flex justify-content-center">{ props.titlenm }</h2> */}
             <Form action="https://www.naver.com" onsubmit="return forminspector(this)" method="post" name="contactform" id="contactform">
-                <FormGroup className="company d-flex align-items-center">
+                <FormGroup className="company">
                     <Label for="company">회사명</Label>
                     <Input type="text" name="company" required/>
                 </FormGroup>
 
-                <FormGroup className="date d-flex align-items-center">
+                <FormGroup className="date w-100">
                     <Label for="interviewDT">면접 날짜와 시간</Label>
-                    <Input type="text" name="interviewDT" required/>
+                    <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
+                    <Input type="time" name="time" id="exampleTime" placeholder="time placeholder" />
                 </FormGroup>
                 
                 <FormGroup className="position">
-                    <div class="title d-flex align-items-center">
+                    <div class="title d-flex align-items-center w-100">
                         <h3>포지션</h3>
                         <span>*하나만 선택해주세요</span>
                     </div>
@@ -124,7 +125,7 @@ export default function interviewform(props) {
                 </FormGroup>
                
                 <FormGroup className="publisher">
-                <div className="title d-flex align-items-center">
+                <div className="title d-flex align-items-center w-100">
                     <h3>희망업무 능력 순위</h3>
                     <span>*포지션이 퍼블리셔일 경우에만 해당됩니다.</span>
                 </div>
@@ -147,7 +148,7 @@ export default function interviewform(props) {
                         </li>
                     </ul>
                 </FormGroup>
-                <FormGroup className="pnum d-flex align-items-center">
+                <FormGroup className="pnum">
                     <Label for="phone">담당자연락처</Label>
                     <div className="d-flex align-items-center ms-2">
                         <Input type="select" id="number">
